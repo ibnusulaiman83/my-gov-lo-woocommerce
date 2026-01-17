@@ -66,7 +66,7 @@ function wc_gov_lo_display_my_account( $order ) {
     $status      = wc_get_order_status_name( $order->get_status() );
     ?>
     <section class="gov-lo-my-account-box">
-        <h2 class="woocommerce-column__title">Letter Order (LO) Details</h2>
+        <h2 class="woocommerce-column__title">Local Order (LO) Details</h2>
         <table class="woocommerce-table shop_table">
             <tr><th>LO Status:</th><td><strong><?php echo esc_html( $status ); ?></strong></td></tr>
             <tr><th>Date:</th><td><?php echo esc_html( $order_date ); ?></td></tr>

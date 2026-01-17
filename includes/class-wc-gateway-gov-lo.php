@@ -7,8 +7,8 @@ class WC_Gateway_Gov_LO extends WC_Payment_Gateway {
         $this->id                 = 'gov_lo';
         $this->icon               = ''; 
         $this->has_fields         = true;
-        $this->method_title       = 'Malaysian Gov Letter Order';
-        $this->method_description = 'Allow payments using Malaysian Government Letter Order (LO) with mandatory document upload.';
+        $this->method_title       = 'Malaysian Gov Local Order';
+        $this->method_description = 'Allow payments using Malaysian Government Local Order (LO) with mandatory document upload.';
 
         $this->init_form_fields();
         $this->init_settings();
@@ -24,21 +24,21 @@ class WC_Gateway_Gov_LO extends WC_Payment_Gateway {
             'enabled' => array(
                 'title'   => 'Enable/Disable',
                 'type'    => 'checkbox',
-                'label'   => 'Enable Gov LO Payment',
+                'label'   => 'Enable Gov Local Order Payment',
                 'default' => 'yes'
             ),
             'title' => array(
                 'title'       => 'Title',
                 'type'        => 'text',
                 'description' => 'This controls the title which the user sees during checkout.',
-                'default'     => 'Government Letter Order (LO)',
+                'default'     => 'Government Local Order (LO)',
                 'desc_tip'    => true,
             ),
             'description' => array(
                 'title'       => 'Description',
                 'type'        => 'textarea',
                 'description' => 'Payment method description that the customer will see on your checkout.',
-                'default'     => 'Please upload your official Letter Order (LO) document in PDF format.',
+                'default'     => 'Please upload your official Local Order (LO) document in PDF format.',
             )
         );
     }
@@ -54,14 +54,14 @@ class WC_Gateway_Gov_LO extends WC_Payment_Gateway {
         woocommerce_form_field( 'gov_lo_number', array(
             'type'        => 'text',
             'class'       => array('form-row-wide'),
-            'label'       => 'LO Number (Required)',
+            'label'       => 'Local Order Number (Required)',
             'required'    => true,
             'placeholder' => 'Example: KKM/2026/001'
         ));
 
         // File Upload Input
         echo '<div class="form-row form-row-wide">
-                <label>Upload LO Document (PDF Only) <span class="required">*</span></label>
+                <label>Upload Local Order Document (PDF Only) <span class="required">*</span></label>
                 <input type="file" name="gov_lo_file" id="gov_lo_file" accept=".pdf" required />
                 <small style="display:block; color: #666; margin-top:5px;">Maximum file size depends on your server settings.</small>
               </div>';
@@ -73,7 +73,7 @@ class WC_Gateway_Gov_LO extends WC_Payment_Gateway {
         $order = wc_get_order( $order_id );
 
         // Mark as On Hold
-        $order->update_status( 'on-hold', __( 'Awaiting LO document verification.', 'wc-gov-lo' ) );
+        $order->update_status( 'on-hold', __( 'Awaiting Local Order document verification.', 'wc-gov-lo' ) );
         wc_reduce_stock_levels( $order_id );
         WC()->cart->empty_cart();
 

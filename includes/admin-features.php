@@ -22,7 +22,7 @@ function wc_gov_lo_render_admin_metabox( $post_or_order_object ) {
     if ( ! $order ) return;
 
     if ( $order->get_payment_method() !== 'gov_lo' ) {
-        echo '<p style="color:#777;">This order does not use Gov LO.</p>';
+        echo '<p style="color:#777;">This order does not use Gov Local Order.</p>';
         return;
     }
 

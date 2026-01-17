@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: WooCommerce Malaysia Gov Letter Order Payment
+ * Plugin Name: WooCommerce Malaysia Gov Local Order Payment
  * Plugin URI: https://misolutions.my
  * Author URI: https://misolutions.my
- * Description: Adds Malaysian Government Letter Order (LO) payment method with PDF upload, confirmation pop-up, and admin verification.
+ * Description: Adds Malaysian Government Local Order (LO) payment method with PDF upload, confirmation pop-up, and admin verification.
  * Version: 1.2
  * Author: Fairuz Sulaiman
  * Text Domain: wc-gov-lo
