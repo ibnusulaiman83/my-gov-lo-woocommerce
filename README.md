@@ -1,2 +1,3 @@
 # my-gov-lo-woocommerce
-Woocommerce Malaysia Gov LO Payment Method
+Woocommerce Malaysia Gov Local Order Payment Method
+
